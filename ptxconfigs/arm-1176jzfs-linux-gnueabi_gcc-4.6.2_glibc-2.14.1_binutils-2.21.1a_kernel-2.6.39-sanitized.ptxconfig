@@ -72,7 +72,7 @@ PTXCONF_CROSS_GCC_PKGVERSION="${PTXCONF_PROJECT}"
 PTXCONF_CROSS_GCC_43=y
 PTXCONF_CROSS_GCC_45=y
 PTXCONF_CROSS_GCC_SERIES=""
-PTXCONF_CROSS_GCC_CONFIG_EXTRA="--with-float=softfp --with-fpu=vfp --with-cpu=arm1176jzf-s"
+PTXCONF_CROSS_GCC_CONFIG_EXTRA="--with-float=hard --with-fpu=vfp --with-cpu=arm1176jzf-s"
 
 #
 # Additional supported languages:
