@@ -1,0 +1,25 @@
+For ARM hard-float, it was agreed to use ld-linux-armhf.so.3 as the new library name.
+keep ld-linux.so.3 for compatibility
+Index: glibc-ports-2.16.0/sysdeps/arm/shlib-versions
+===================================================================
+--- glibc-ports-2.16.0.orig/sysdeps/arm/shlib-versions	2012-06-21 19:08:19.000000000 +0200
++++ glibc-ports-2.16.0/sysdeps/arm/shlib-versions	2012-10-28 09:32:11.000000000 +0100
+@@ -2,7 +2,7 @@
+ 
+ %ifdef HAVE_ARM_PCS_VFP
+ # The EABI-derived hard-float ABI uses a new dynamic linker.
+-arm.*-.*-linux-gnueabi.*       ld=ld-linux-armhf.so.3
++arm.*-.*-linux-gnueabi.*       ld=ld-linux.so.3
+ %else
+ # The EABI-derived soft-float ABI continues to use ld-linux.so.3.
+ arm.*-.*-linux-gnueabi.*       ld=ld-linux.so.3
+Index: glibc-ports-2.16.0/sysdeps/unix/sysv/linux/arm/Makefile
+===================================================================
+--- glibc-ports-2.16.0.orig/sysdeps/unix/sysv/linux/arm/Makefile	2012-10-28 09:48:11.000000000 +0100
++++ glibc-ports-2.16.0/sysdeps/unix/sysv/linux/arm/Makefile	2012-10-28 09:48:26.000000000 +0100
+@@ -90,4 +90,4 @@
+ abi-soft-ld-soname := ld-linux.so.3
+ abi-hard-options := -D__ARM_PCS_VFP
+ abi-hard-condition := defined __ARM_PCS_VFP
+-abi-hard-ld-soname := ld-linux-armhf.so.3
++abi-hard-ld-soname := ld-linux.so.3

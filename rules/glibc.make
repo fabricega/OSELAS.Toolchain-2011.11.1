@@ -113,6 +113,10 @@ else
 GLIBC_AUTOCONF_COMMON	+= --without-tls --without-__thread
 endif
 
+ifeq ($(call remove_quotes,$(PTXCONF_GLIBC_VERSION)),2.16.0)
+GLIBC_AUTOCONF_COMMON += --enable-obsolete-rpc
+endif
+
 GLIBC_AUTOCONF := \
 	$(GLIBC_AUTOCONF_COMMON) \
 	$(PTXCONF_GLIBC_CONFIG_EXTRA_CROSS) \

@@ -1,0 +1,5 @@
+120-sh-conf.patch
+300-001_ld_makefile_patch.patch
+300-012_check_ldrunpath_length.patch
+999-ppc-textrels.patch
+

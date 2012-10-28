@@ -68,11 +68,13 @@ source "workspace/rules/kernel-headers.in"
 source "workspace/rules/cross-gcc.in"
 source "workspace/rules/cross-gdb.in"
 source "workspace/rules/cross-toolchain.in"
+source "workspace/rules/host-expat.in"
 source "workspace/rules/host-gmp.in"
 source "workspace/rules/host-mpc.in"
 source "workspace/rules/host-mpfr.in"
 source "workspace/rules/host-zlib.in"
 source "workspace/rules/host-libelf.in"
+source "rules/host-autotools-autoconf.in"
 
 comment "----------------------------------"
 

@@ -87,6 +87,11 @@ GLIBC_HEADERS_ENV  := \
 	ac_cv_header_cpuid_h=yes \
 	ac_cv_path_GREP=grep
 
+# glibc-2.16.0
+ifeq ($(call remove_quotes,$(PTXCONF_GLIBC_VERSION)),2.16.0)
+GLIBC_HEADERS_ENV += libc_cv_predef_stack_protector=no
+endif
+
 #
 # autoconf
 #
@@ -94,6 +99,10 @@ GLIBC_HEADERS_AUTOCONF = \
 	$(GLIBC_AUTOCONF_COMMON) \
 	\
 	--enable-hacker-mode
+
+ifeq ($(call remove_quotes,$(PTXCONF_GLIBC_VERSION)),2.16.0)
+GLIBC_HEADERS_AUTOCONF += --enable-obsolete-rpc
+endif
 
 $(STATEDIR)/glibc-headers.prepare:
 	@$(call targetinfo)
